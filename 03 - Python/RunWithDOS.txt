@@ -1,0 +1,2 @@
+print("This is the Saylani First Python Class")
+print("This Program is run by DOS Prompt")

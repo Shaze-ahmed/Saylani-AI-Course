@@ -1,0 +1,36 @@
+. ORACLE
+.
+. Application Express (APEX) Installation.
+..........................................
+.
+...set_appun.sql
+Usage: SET SERVEROUTPUT { ON | OFF } [SIZE n]
+             [ FOR[MAT] { WRA[PPED] | WOR[D_WRAPPED] | TRU[NCATED] } ]
+... Checking prerequisites (MANUAL)
+.
+. SYSDBA Privilege                                                              
+.   pass - Connection with SYSDBA privilege.                                    
+. Database rolling upgrade                                                      
+.   pass - No rolling upgrade.                                                  
+. DB components                                                                 
+.   pass - CATPROC: version=11.2.0.3.0                                          
+.   pass - XDB: version=11.2.0.3.0                                              
+. XDB                                                                           
+.   pass - is valid                                                             
+. PL/SQL Web Toolkit                                                            
+.   pass - version 10.1.2.0.8                                                   
+. Tablespaces                                                                   
+.   FAIL - The tablespace Validating does not exist.                            
+.   FAIL - The tablespace Installation does not exist.                          
+.   FAIL - The tablespace admin does not exist.                                 
+. PHASES (admin)...                                                             
+.   FAIL - Invalid value for phases: "admin". Should be 1 2 3 1,2,3 1,2 or 2,3  
+.                                                                               
+. 4 errors occurred                                                             
+declare
+*
+ERROR at line 1:
+ORA-06501: PL/SQL: program error 
+ORA-06512: at line 288 
+
+

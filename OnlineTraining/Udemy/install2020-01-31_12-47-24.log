@@ -1,0 +1,453 @@
+. ORACLE
+.
+. Application Express (APEX) Installation.
+..........................................
+.
+SP2-0310: unable to open file "core/scripts/set_appun.sql"
+SP2-0310: unable to open file "core/scripts/apxprereq.sql"
+SP2-0310: unable to open file "core/scripts/set_ufrom_and_upgrade.sql"
+SP2-0310: unable to open file "core/scripts/gen_adm_pwd.sql"
+Phase 1 (Installation)
+
+                                                                                
+                                                                                
+
+Enter value for adm_pwd: admin
+SP2-0310: unable to open file "coreins.sql"
+SP2-0734: unknown command beginning "APPUN ^UFR..." - rest of line ignored.
+timing for: Phase 1 (Installation)
+Elapsed: 00:03:15.27
+Phase 2 (Upgrade)
+
+                                                                                
+                                                                                
+
+Usage: SET SERVEROUTPUT { ON | OFF } [SIZE n]
+             [ FOR[MAT] { WRA[PPED] | WOR[D_WRAPPED] | TRU[NCATED] } ]
+SP2-0158: unknown SET option "format"
+    APEX_190200.wwv_install_api.begin_phase (
+    *
+ERROR at line 2:
+ORA-06550: line 2, column 5: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 2, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0735: unknown SET option beginning "errorloggi..."
+ERROR:
+ORA-01435: user does not exist 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+        APEX_190200.wwv_install_api.error (
+        *
+ERROR at line 9:
+ORA-06550: line 9, column 9: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 9, column 9: 
+PL/SQL: Statement ignored 
+ORA-06550: line 58, column 9: 
+PLS-00201: identifier 'WWV_FLOW_UPGRADE.COPY_FLOW_META_DATA' must be declared 
+ORA-06550: line 58, column 9: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/reset_state_and_show_invalid.sql"
+
+                                                                                
+                                                                                
+
+Enter value for adm_pwd: admin
+Usage: SET SERVEROUTPUT { ON | OFF } [SIZE n]
+             [ FOR[MAT] { WRA[PPED] | WOR[D_WRAPPED] | TRU[NCATED] } ]
+SP2-0158: unknown SET option "format"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0735: unknown SET option beginning "errorloggi..."
+ERROR:
+ORA-01435: user does not exist 
+
+
+    wwv_flow_upgrade.upgrade_to_latest (
+    *
+ERROR at line 4:
+ORA-06550: line 4, column 5: 
+PLS-00201: identifier 'WWV_FLOW_UPGRADE.UPGRADE_TO_LATEST' must be declared 
+ORA-06550: line 4, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+
+PL/SQL procedure successfully completed.
+
+alter package sys.wwv_dbms_sql_APEX_190200 compile body
+*
+ERROR at line 1:
+ORA-04043: object WWV_DBMS_SQL_APEX_190200 does not exist 
+
+
+alter type wwv_flow_t_writer compile body
+*
+ERROR at line 1:
+ORA-04043: object WWV_FLOW_T_WRITER does not exist 
+
+
+SP2-0310: unable to open file "core/scripts/reset_state_and_show_invalid.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+...Migrate APEX_INSTANCE_ADMIN_USER - Administration REST Interface
+          from APEX_190200.wwv_flow_company_schemas
+                           *
+ERROR at line 9:
+ORA-06550: line 9, column 28: 
+PL/SQL: ORA-00942: table or view does not exist 
+ORA-06550: line 7, column 9: 
+PL/SQL: SQL Statement ignored 
+ORA-06550: line 18, column 28: 
+PL/SQL: ORA-00942: table or view does not exist 
+ORA-06550: line 16, column 9: 
+PL/SQL: SQL Statement ignored 
+ORA-06550: line 26, column 9: 
+PLS-00201: identifier 'APEX_190200.WWV_FLOW_INSTANCE_ADMIN' must be declared 
+ORA-06550: line 26, column 9: 
+PL/SQL: Statement ignored 
+ORA-06550: line 27, column 9: 
+PLS-00201: identifier 'APEX_190200.WWV_FLOW_INSTANCE_ADMIN' must be declared 
+ORA-06550: line 27, column 9: 
+PL/SQL: Statement ignored 
+
+
+...Initialize the table of Oracle default schema names
+    l_schemas wwv_flow_t_varchar2;
+              *
+ERROR at line 2:
+ORA-06550: line 2, column 15: 
+PLS-00201: identifier 'WWV_FLOW_T_VARCHAR2' must be declared 
+ORA-06550: line 2, column 15: 
+PL/SQL: Item ignored 
+ORA-06550: line 4, column 5: 
+PLS-00320: the declaration of the type of this expression is incomplete or 
+malformed 
+ORA-06550: line 4, column 5: 
+PL/SQL: Statement ignored 
+ORA-06550: line 56, column 9: 
+PLS-00320: the declaration of the type of this expression is incomplete or 
+malformed 
+ORA-06550: line 56, column 9: 
+PL/SQL: Statement ignored 
+ORA-06550: line 57, column 9: 
+PLS-00320: the declaration of the type of this expression is incomplete or 
+malformed 
+ORA-06550: line 57, column 9: 
+PL/SQL: Statement ignored 
+ORA-06550: line 64, column 27: 
+PLS-00320: the declaration of the type of this expression is incomplete or 
+malformed 
+ORA-06550: line 64, column 27: 
+PL/SQL: ORA-00904: "L_SCHEMAS": invalid identifier 
+ORA-06550: line 60, column 5: 
+PL/SQL: SQL Statement ignored 
+
+
+...Service signup Question install
+    insert into wwv_flow_prov_signup_q (id, pkg_app_only_ws_yn, show_schema_yn, survey_enabled_yn, justification_required_yn) values (1, 'N', 'N', 'N', 'Y');
+                *
+ERROR at line 3:
+ORA-06550: line 3, column 17: 
+PL/SQL: ORA-00942: table or view does not exist 
+ORA-06550: line 3, column 5: 
+PL/SQL: SQL Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+...not implemented on new install                                               
+
+PL/SQL procedure successfully completed.
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4411.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4155.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/themes/apex_install_internal_themes.sql"
+...Applications install if necessary
+
+FOO                                                                             
+----------                                                                      
+appins.sql                                                                      
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4000.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4020.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4350.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4050.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4550.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4600.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4650.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4700.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4750.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4500.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4300.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4400.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4900.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4800.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "builder/f4850.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+    wwv_flow_authentication_dev.reset_internal_authentication;
+    *
+ERROR at line 2:
+ORA-06550: line 2, column 5: 
+PLS-00201: identifier 
+'WWV_FLOW_AUTHENTICATION_DEV.RESET_INTERNAL_AUTHENTICATION' must be declared 
+ORA-06550: line 2, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/apex_install_dictionary_view_data.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/apex_install_advisor_data.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/verification_images_load.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/packaged_apps/metadata.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/packaged_apps/install_packaged_apps.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+update wwv_flows
+       *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+    wwv_flow_upgrade.copy_prefs('APEX_190200','APEX_190200');
+    *
+ERROR at line 4:
+ORA-06550: line 4, column 5: 
+PLS-00201: identifier 'WWV_FLOW_UPGRADE.COPY_PREFS' must be declared 
+ORA-06550: line 4, column 5: 
+PL/SQL: Statement ignored 
+
+
+
+                                                                                
+                                                                                
+Usage: SET SERVEROUTPUT { ON | OFF } [SIZE n]
+             [ FOR[MAT] { WRA[PPED] | WOR[D_WRAPPED] | TRU[NCATED] } ]
+SP2-0158: unknown SET option "format"
+SP2-0735: unknown SET option beginning "errorloggi..."
+        APEX_190200.wwv_flow_upgrade.enable_ws_constraints (
+        *
+ERROR at line 3:
+ORA-06550: line 3, column 9: 
+PLS-00201: identifier 'APEX_190200.WWV_FLOW_UPGRADE' must be declared 
+ORA-06550: line 3, column 9: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/apxsqler.sql"
+    if APEX_190200.wwv_install_api.get_error_count > 0 then
+       *
+ERROR at line 2:
+ORA-06550: line 2, column 8: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 2, column 5: 
+PL/SQL: Statement ignored 
+ORA-06550: line 8, column 5: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 8, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0735: unknown SET option beginning "errorloggi..."
+timing for: Enabling Phase 2
+Elapsed: 00:00:06.78
+timing for: Phase 2 (Upgrade)
+Elapsed: 00:00:06.81
+Phase 3 (Switch)
+
+                                                                                
+                                                                                
+Usage: SET SERVEROUTPUT { ON | OFF } [SIZE n]
+             [ FOR[MAT] { WRA[PPED] | WOR[D_WRAPPED] | TRU[NCATED] } ]
+SP2-0158: unknown SET option "format"
+    APEX_190200.wwv_install_api.begin_phase (
+    *
+ERROR at line 2:
+ORA-06550: line 2, column 5: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 2, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0735: unknown SET option beginning "errorloggi..."
+ERROR:
+ORA-01435: user does not exist 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+    l_object_ids wwv_flow_t_number;
+                 *
+ERROR at line 2:
+ORA-06550: line 2, column 18: 
+PLS-00201: identifier 'WWV_FLOW_T_NUMBER' must be declared 
+ORA-06550: line 2, column 18: 
+PL/SQL: Item ignored 
+ORA-06550: line 3, column 18: 
+PLS-00201: identifier 'WWV_FLOW_T_VARCHAR2' must be declared 
+ORA-06550: line 3, column 18: 
+PL/SQL: Item ignored 
+ORA-06550: line 29, column 16: 
+PLS-00320: the declaration of the type of this expression is incomplete or 
+malformed 
+ORA-06550: line 31, column 11: 
+PL/SQL: ORA-00904: : invalid identifier 
+ORA-06550: line 7, column 9: 
+PL/SQL: SQL Statement ignored 
+ORA-06550: line 50, column 25: 
+PLS-00320: the declaration of the type of this expression is incomplete or 
+malformed 
+ORA-06550: line 48, column 9: 
+PL/SQL: Statement ignored 
+ORA-06550: line 52, column 23: 
+PLS-00320: the declaration of the type of this expression is incomplete or 
+malformed 
+ORA-06550: line 52, column 9: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/reset_state_and_show_invalid.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+ERROR:
+ORA-01435: user does not exist 
+
+
+    wwv_flow_upgrade.switch_schemas('APEX_190200','APEX_190200');
+    *
+ERROR at line 2:
+ORA-06550: line 2, column 5: 
+PLS-00201: identifier 'WWV_FLOW_UPGRADE.SWITCH_SCHEMAS' must be declared 
+ORA-06550: line 2, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/flows_files_new2.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+SP2-0310: unable to open file "core/scripts/reset_state_and_show_invalid.sql"
+BEGIN APEX_190200.wwv_install_api.continue_phase(p_phase => 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+
+THESCRIPT                                                                       
+-------------------------                                                       
+core/null1.sql                                                                  
+SP2-0310: unable to open file "core/scripts/gen_adm_pwd.sql"
+SP2-0310: unable to open file "core/null1.sql"
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+    APEX_190200.wwv_install_api.set_upgraded_in_registry;
+    *
+ERROR at line 2:
+ORA-06550: line 2, column 5: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 2, column 5: 
+PL/SQL: Statement ignored 
+ORA-06550: line 3, column 5: 
+PLS-00201: identifier 'APEX_190200.WWV_FLOW_UPGRADE' must be declared 
+ORA-06550: line 3, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+        APEX_190200.wwv_flow_upgrade.drop_upgrade_triggers (
+        *
+ERROR at line 30:
+ORA-06550: line 30, column 9: 
+PLS-00201: identifier 'APEX_190200.WWV_FLOW_UPGRADE' must be declared 
+ORA-06550: line 30, column 9: 
+PL/SQL: Statement ignored 
+
+
+SP2-0310: unable to open file "core/scripts/install_action.sql"
+        sys.validate_apex;
+        *
+ERROR at line 5:
+ORA-06550: line 5, column 9: 
+PLS-00201: identifier 'SYS.VALIDATE_APEX' must be declared 
+ORA-06550: line 5, column 9: 
+PL/SQL: Statement ignored 
+
+
+select wwv_flows_release as flow_version from sys.dual where rownum = 1
+       *
+ERROR at line 1:
+ORA-00904: "WWV_FLOWS_RELEASE": invalid identifier 
+
+
+JOB_QUEUE_PROCESSES: 2                                                          
+timing for: Enabling Phase 3
+Elapsed: 00:00:00.75
+    APEX_190200.wwv_install_api.end_phase (
+    *
+ERROR at line 2:
+ORA-06550: line 2, column 5: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 2, column 5: 
+PL/SQL: Statement ignored 
+ORA-06550: line 5, column 5: 
+PLS-00201: identifier 'APEX_190200.WWV_INSTALL_API' must be declared 
+ORA-06550: line 5, column 5: 
+PL/SQL: Statement ignored 
+
+
+SP2-0735: unknown SET option beginning "errorloggi..."
+
+
+
+Enter value for version: 19.2
+Thank you for installing Oracle Application Express 19.2
+
+Oracle Application Express is installed in the APEX_190200 schema.
+
+The structure of the link to the Application Express administration services is as follows:
+http://host:port/pls/apex/apex_admin (Oracle HTTP Server with mod_plsql)
+http://host:port/apex/apex_admin     (Oracle XML DB HTTP listener with the embedded PL/SQL gateway)
+http://host:port/apex/apex_admin     (Oracle REST Data Services)
+
+The structure of the link to the Application Express development interface is as follows:
+http://host:port/pls/apex (Oracle HTTP Server with mod_plsql)
+http://host:port/apex     (Oracle XML DB HTTP listener with the embedded PL/SQL gateway)
+http://host:port/apex     (Oracle REST Data Services)
+
+
+GLOBAL_NAME                                                                     
+------------------------------                                                  
+SYS                                                                             
+timing for: Phase 3 (Switch)
+Elapsed: 00:00:05.05
+timing for: Complete Installation
+Elapsed: 00:03:27.16
