@@ -1,0 +1,47 @@
+
+
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[-1])
+print(thislist[0])
+print(thislist[2:5])
+print(thislist[:4])
+print(thislist[-4:-1])
+if "apple" in thislist:
+  print("Yes, 'apple' is in the fruits list")
+thislist[1] = "blackcurrant"
+thislist[1:3] = ["blackcurrant", "watermelon"]
+thislist.insert(2, "watermelon")
+thislist.append("orange")
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical)
+thislist.remove("banana")
+thislist.pop(1)
+thislist.clear()
+for x in thislist:
+  print(x)
+for i in range(len(thislist)):
+  print(thislist[i])
+ 
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+thislist.sort()
+thislist.sort(reverse = True)
+thislist.reverse()
+mylist = thislist.copy()
+
+append()	Adds an element at the end of the list
+clear()		Removes all the elements from the list
+copy()		Returns a copy of the list
+count()		Returns the number of elements with the specified value
+extend()	Add the elements of a list (or any iterable), to the end of the current list
+index()		Returns the index of the first element with the specified value
+insert()	Adds an element at the specified position
+pop()		Removes the element at the specified position
+remove()	Removes the item with the specified value
+reverse()	Reverses the order of the list
+sort()		Sorts the list
