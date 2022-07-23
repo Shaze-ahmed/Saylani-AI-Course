@@ -229,7 +229,7 @@ class Courses():
                 CourseTemp +=(f"""{names[0]}\t\t{names[1]}\t\t\t{names[2]}\t\t{names[3]}\t\t{names[4]}\n""")            
         print(CourseTemp.expandtabs(10))
     
-class Saylani(Teacher, Student, Courses):
+class SaylaniMain(Teacher, Student, Courses):
     def __init__(self):
         self.InstituteName = "Salyani Welfare Trust"
         self.HO_Address = "A-25, Bahadurabad Chowrangi Karachi, Pakistan،"

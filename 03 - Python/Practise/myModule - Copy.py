@@ -62,12 +62,12 @@ class Teacher:
             Teacher.__PrintTeacherInfo(self, 'A')
             
     def __PrintTeacherInfo(self, show='S'):
-        TeacherTemp = (f"""Teacher ID\tTeacher Name\t\t\tCompany Name\t\tCourses\n{'-'*100}\n""")
+        TeacherTemp = (f"""Teacher ID\tTeacher Name\t\tCompany Name\t\tCourses\n{'-'*100}\n""")
         if show == 'S':
-            TeacherTemp += (f"""{self._teacherID}\t\t{self._teacherName}\t\t{self._compName}\t\t\t{self._Course}""")
+            TeacherTemp += (f"""{self._teacherID}\t\t{self._teacherName}\t\t\t{self._compName}\t\t\t{self._Course}""")
         else:
             for names in self._TeacherList:
-                TeacherTemp +=(f"""{names[0]}\t\t{names[1]}\t\t{names[2]}\t\t\t{names[3]}\n""")
+                TeacherTemp +=(f"""{names[0]}\t\t{names[1]}\t\t\t{names[2]}\t\t\t{names[3]}\n""")
             
         print(TeacherTemp.expandtabs(10))
         
@@ -241,18 +241,9 @@ class Saylani(Teacher, Student, Courses):
         Student._StudentList = []
         Teacher._TeacherList = []
         Courses._CourseList = []
-      
-    def AboutUS(self):
-        tempInfo = (f"""Institute Name\t\t:\t{self.InstituteName}\n""")
-        tempInfo += (f"""Address\t\t\t:\t{self.HO_Address}\n\n""")
-        tempInfo += (f"""Available Course(s)\t:\t{self.totCourse}\n""")
-        tempInfo += (f"""Available Teacher(s)\t:\t{self.totTeachers}\n""")
-        tempInfo += (f"""Register Student(s)\t:\t{self.totStudents}\n""")
-
-        print(tempInfo)
         
     def StudentSummary(self, Student ='A'):
-        CourseTemp = (f"""Student ID\tStudent Name\t\tBatch Name\t\tCourse Name\t\t\tTeacher Name\n{'-'*120}\n""")
+        CourseTemp = (f"""Student ID\tStudent Name\t\tBatch Name\t\tCourse Name\t\tTeacher Name\n{'-'*120}\n""")
         if Student != 'A':
             try:
                 tList = [x for x in self._StudentList for y in x if y == Student]
@@ -288,7 +279,7 @@ class Saylani(Teacher, Student, Courses):
                 totList.extend(sinfo[0])
                 totList.extend(cinfo[0])
                 totList.extend(tinfo[0])
-                CourseTemp += (f"""{totList[0]}\t\t{totList[1]}\t\t\t{totList[2]}\t\t{totList[7]}\t\t\t{totList[11]}\n""")   
+                CourseTemp += (f"""{totList[0]}\t\t{totList[1]}\t\t\t{totList[2]}\t\t{totList[7]}\t\t{totList[11]}\n""")   
 
             
         print(CourseTemp)
