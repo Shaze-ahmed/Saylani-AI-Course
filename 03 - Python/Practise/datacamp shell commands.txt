@@ -1,9 +1,0 @@
-pwd -- current directory
-cd -- enter or exit directory
-ls -- showing content in current directory
-cp -- copy file
-mv -- move file
-rm -- delete file
-mkdir -- make directory
-rmdir -- remove directory
-
