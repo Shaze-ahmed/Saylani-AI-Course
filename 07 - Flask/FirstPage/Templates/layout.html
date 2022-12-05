@@ -1,0 +1,15 @@
+<! doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}" >
+        <img src="{{ url_for('static', filename='logo.png' ) }}" width="50" height="60" alt="logo"> 
+    <h1> Task Management System </h1>
+</head>
+    <a href="{{ url_for('index')}}"> Home</a>
+    <a href="{{ url_for('about')}}"> About</a>
+    <a href="{{ url_for('info')}}"> Info</a>
+
+    {% block myContent %}
+
+    {% endblock %}
+</html>
